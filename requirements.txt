@@ -1,5 +1,5 @@
 httpx~=0.23.3
-romkan~=0.2.2
+git+https://github.com/Bel-Shazzar/python-romkan#egg=romkan
 setuptools~=65.5.1
 transliterate~=1.10.2
 sounddevice~=0.4.6
