@@ -17,7 +17,7 @@ config.read("config.ini")
 q = queue.Queue()
 samplerate = int(config['VOICEVOX']['SamplingRate'])
 language = config['VOICEVOX']['RecognitionLanguage']
-speaker = int(config['VOICEVOX']['Speaker'])
+voice = int(config['VOICEVOX']['VoiceNumber'])
 
 
 def callback(indata, frames, time, status):
@@ -36,7 +36,7 @@ def speech_recognition():
                 text = json.loads(rec.Result())
                 printer.console_print('TEXT', text["text"])
                 romanian = translit(text["text"], language, reversed=True)
-                asyncio.run(tts.play_sound(romkan.to_katakana(romanian), speaker))
+                asyncio.run(tts.play_sound(romkan.to_katakana(romanian), voice))
 
 
 if __name__ == "__main__":
