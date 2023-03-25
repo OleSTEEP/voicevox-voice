@@ -21,7 +21,3 @@ if __name__ == "__main__":
 
     printer.console_print('INFO', 'Recognition started')
     vosk_reconizer.speech_recognition()
-
-
-
-
