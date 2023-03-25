@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import simpleaudio as sa
+import sounddevice as sd
+import numpy as np
 import configparser
 import httpx
 
@@ -27,8 +28,7 @@ async def play_sound(string, voice: int):
                                           json=query_json)
         audio_data = response.content
 
-        with open('cache/audio.wav', 'wb') as f:
-            f.write(audio_data)
-            wave_obj = sa.WaveObject.from_wave_file('cache/audio.wav')
-            play_obj = wave_obj.play()
-            play_obj.wait_done()
+        numpy_audio = np.frombuffer(audio_data, dtype=np.int32)
+
+        sd.default.device = config['VOICEVOX']['AudioDeviceName']
+        sd.play(numpy_audio, int(config['VOICEVOX']['SamplingRate']))
