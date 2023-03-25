@@ -1,6 +1,9 @@
 # VoiceVOX-voice
 Simple VoiceVOX sinetizer for fun (for Discord for example) on multiple languages
 
+## Architecture (Really cursed)
+`Your speech -> Text -> Translit -> Romanji -> Katokana -> VoiceVOX -> Audio Device`
+
 ## Installing
 * Install Python 3.10
 * Install [VoiceVOX Server](https://voicevox.hiroshiba.jp/)
