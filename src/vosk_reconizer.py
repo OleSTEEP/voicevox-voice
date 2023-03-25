@@ -32,7 +32,7 @@ def speech_recognition():
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
-                printer.console_print('INFO', 'Playing audio')
+                printer.console_print('INFO', 'Playing audio...')
                 text = json.loads(rec.Result())
                 printer.console_print('TEXT', text["text"])
                 romanian = translit(text["text"], language, reversed=True)

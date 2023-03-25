@@ -16,7 +16,7 @@ def cache_create():
 
 
 if __name__ == "__main__":
-    printer.console_print('INFO', 'Trying to create cache folder', '')
+    printer.console_print('INFO', 'Trying to create cache folder...', '')
     cache_create()
 
     printer.console_print('INFO', 'Recognition started')
